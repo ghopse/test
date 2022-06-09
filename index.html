@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous"> 
+		<link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"
+  integrity="sha256-xH4q8N0pEzrZMaRmd7gQVcTZiFei+HfRTBPJ1OGXC0k="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="js/general.js"></script>
+		<title>Car Parking Navigation System</title>
+	</head>
+	<body>
+	  <section id="action-screen">
+      <h4>Pick Your Action</h4>
+      <a href="#save-parking-input-1">
+        <div class="save-parking">
+          <div class="icon-1">
+           <img src="img/save_parking.svg" atl="save parking">
+          </div>
+          <h3 class="text-1">Save parking</h3>
+        </div>
+      </a>
+      <a href="#retrieve-parking-input-1">
+        <div class="to-your-car">
+         <div class="icon-2">
+           <img src="img/to_your_car.svg" atl="to your car">
+         </div>
+         <h3 class="text-2">To your car</h3>
+        </div>
+      </a>
+    </section>
+
+    <form id="form1">
+    <section id="save-parking-input-1">
+        <div class="to-action-screen-1">
+          <a href="#action-screen">
+            <img class="go-back" src="img/previous_page.svg" atl="">
+          </a>
+        </div>
+
+          <div class="icon-3">
+            <img src="img/car_plate.svg" atl="car plate">
+          </div>
+
+        <div class="input-section">
+          
+          <label class="text-3" for="plateNo">Your car plate number</label>
+          <input id = "input1" type="text" name="plateNo" placeholder="EX. ABC1234">
+          <h5 id="plateNoCheck" style="color:red;">car plate number is missing</h5>
+          <a href="#save-parking-input-2"><div id="btn-1">Next</div></a>
+        
+        </div>
+      
+    </section>
+
+<section id="save-parking-input-2">
+     <div class="to-input-1">
+      <a href="#save-parking-input-1">
+         <img class="go-back" src="img/previous_page.svg" atl="">
+      </a>
+      </div>
+     <div class="illustration-icon">
+       <div class="icon-4">
+         <img src="img/parking_space.svg" atl="parking space">
+       </div>
+      </div>
+      <div class="input-section">
+        
+          <label class="text-3" for="slotNo">Your parking space number</label>
+          <input id = "input2" type="text" name="slotNo" placeholder="EX. A10">
+          <h5 id="slotNoCheck" style="color:red;">parking space number is missing</h5>
+       <a href="#save-parking-action"><button type="submit" id="btn-2">Save now</button></a>
+      
+      </div>
+      
+   </section>
+  </form>
+
+   <section id="save-parking-action">
+     <div class="to-input-2">
+       <a href="#save-parking-input-2">
+         <img class="go-back" src="img/previous_page.svg" atl="">
+       </a>
+      </div>
+     <div class="plate-no-info">
+       <h4>Your car plate number:</h4>
+       <h3>ABC5678</h3>
+     </div>
+     <div class="parking-space-info">
+       <h4>Your parking space:</h4>
+       <h3>B3A15</h3>
+     </div>
+     <div class="find-exit">
+      <a href="#map-to-exit"><button id="btn-3">Find the nearest exit</button></a>
+     </div>
+   </section>
+
+   <section id="map-to-exit">
+     <h4>In Progress</h4>
+   </section>
+
+   <section id="retrieve-parking-input-1">
+    <form action="retrieve.php" method="post">
+     <div class="to-action-screen-2">
+       <a href="#action-screen">
+         <img class="go-back" src="img/previous_page.svg" atl="">
+       </a>
+      </div>
+     <div class="illustration-icon">
+       <div class="icon-5">
+         <img src="img/car_plate.svg" atl="car plate">
+       </div>
+       <h4>Please enter your car plate number</h4>
+     </div>
+     <div class="input-section">
+       <h5 class="text-5">Car plate number</h5>
+       <input class = "input3" type="text" name="plateNo" placeholder="EX. AB1234">
+       <input type="submit" value="Submit" id="btn-4">
+
+<!--       <input type="text" placeholder="EX. AB1234">
+       <a href="#retrieve-parking-input-2"><button id="btn-4">Next</button></a>    -->
+
+     </div>
+   </section>
+
+
+   <section id="retrieve-parking-input-2">
+     <div class="to-retrieve-input-1">
+       <a href="#retrieve-parking-input-1">
+         <img class="go-back" src="img/previous_page.svg" atl="">
+       </a>
+      </div>
+     <div class="illustration-icon">
+       <div class="icon-6">
+         <img src="img/nearest_exit.svg" atl="nearest exit">
+       </div>
+       <h4>Please enter your location</h4>
+      </div>
+      <div class="input-section">
+       <h5 class="text-6">Which exit are you at now?</h5>
+       <input type="text" placeholder="EX. B1A01">
+       <a href="#map-to-exit"><button id="btn-5">To my car</button></a>
+      </div>
+      <div class="previous-step-2">
+        <h4><a href="#retrieve-parking-input-1">Previous step</a></h4>
+      </div>
+   </section>
+ </body>
+</html>
